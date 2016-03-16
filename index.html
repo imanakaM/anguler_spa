@@ -8,6 +8,7 @@
     <script src="public/js/lib/angular-ui-router.min.js"></script>
     <script src="public/js/lib/angular-touch.min.js"></script>
     <script src="public/js/lib/angular-resource.min.js"></script>
+    <script src="public/js/lib/angular-messages.min.js"></script>
     <script src="public/js/lib/lodash.min.js"></script>
 
     <script src="public/js/app.js"></script>
@@ -18,17 +19,12 @@
 </head>
 <body ng-controller="TopController">
 
-<div ui-view="container"></div>
-
-<p>test</p>
-
-<div>
-    <input type="button" value="次へ" ng-click="next($event)">
-    <ul>
-    <li><a ui-sref="page1">Page 1</a></li>
-    <li><a ui-sref="page2">Page 2</a></li>
-    </ul>
+<div ui-view="container">
+    <div>
+        <input type="button" value="次へ" ng-click="next($event)">
+    </div>
 </div>
+
 
 </body>
 </html>

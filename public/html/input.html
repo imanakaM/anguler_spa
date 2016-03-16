@@ -1,0 +1,12 @@
+<div>
+    <p>input</p>
+    <div>
+        <form name="inputForm">
+            <input type="text" name="name" ng-model="input.formData.name">
+        </form>
+    </div>
+    <div>
+        <input type="button" value="前へ" ng-click="prev($event)">
+        <input type="button" value="次へ" ng-click="next($event, input)">
+    </div>
+</div>

@@ -38,6 +38,43 @@ app.config(['$stateProvider', '$locationProvider', function($stateProvider, $loc
                     controller      : 'Page4Controller as page4'
                 }
             }
+        })
+        // ここから
+        .state('top', {
+            url : '/',
+            views   : {
+                container   : {
+                    templateUrl     : 'public/html/top.html',
+                    controller      : 'TopController as top'
+                }
+            }
+        })
+        .state('input', {
+            url : '/input',
+            views   : {
+                container   : {
+                    templateUrl     : 'public/html/input.html',
+                    controller      : 'InputController as input'
+                }
+            }
+        })
+        .state('confirm', {
+            url : '/confirm',
+            views   : {
+                container   : {
+                    templateUrl     : 'public/html/confirm.html',
+                    controller      : 'ConfirmController as confirm'
+                }
+            }
+        })
+        .state('comp', {
+            url : '/comp',
+            views   : {
+                container   : {
+                    templateUrl     : 'public/html/comp.html',
+                    controller      : 'CompController as comp'
+                }
+            }
         });
 
 

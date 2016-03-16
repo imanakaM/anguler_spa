@@ -3,17 +3,64 @@ app.controller('TopController', [ '$scope','$state', function($scope, $state) {
     $scope.next       = function(event) {
         event.preventDefault();
 
-        $state.go('page2');
+        $state.go('input');
     };
 
 }]);
 
-app.controller('Page2Controller', [ '$scope','$state', function($scope, $state) {
+app.controller('InputController',
+    [ '$scope','$state','FormDataSharedService',
+    function($scope, $state, FormDataSharedService) {
+
+    this.formData = FormDataSharedService.formData;
+
+    $scope.next       = function(event, form) {
+        event.preventDefault();
+
+        //this.formData = form.formData;
+
+        $state.go('confirm');
+    };
+
+    $scope.prev = function(event) {
+        event.preventDefault();
+
+        $state.go('top');
+    }
+
+}]);
+
+app.controller('ConfirmController',
+    [ '$scope','$state','FormDataSharedService',
+    function($scope, $state, FormDataSharedService) {
+
+    this.formData = FormDataSharedService.formData;
 
     $scope.next       = function(event) {
         event.preventDefault();
 
-        $state.go('page1');
+        $state.go('comp');
     };
 
+    $scope.prev = function(event) {
+        event.preventDefault();
+
+        $state.go('input');
+    }
+
 }]);
+
+app.controller('CompController',
+    [ '$scope','$state','FormDataSharedService',
+    function($scope, $state, FormDataSharedService) {
+
+    this.formData = FormDataSharedService.formData;
+
+    $scope.prev = function(event) {
+        event.preventDefault();
+
+        $state.go('top');
+    }
+
+}]);
+
