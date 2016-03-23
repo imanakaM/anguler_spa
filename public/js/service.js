@@ -1,7 +1,10 @@
 app.factory('FormDataSharedService', function() {
     return {
-        formData       : {
-            name                : null,
+        formData : {
+            name   : null,
+            sex    : null,
+            month  : null,
+            monthList : null,
         }
     };
 });

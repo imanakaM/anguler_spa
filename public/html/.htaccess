@@ -1,8 +1,0 @@
-RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule /angular_spa/input/ /angular_spa/index.html [QSA]
-RewriteRule input /angular_spa/index.html [QSA]
-RewriteRule /input /angular_spa/index.html [QSA]
-RewriteRule input index.html [QSA]
-RewriteRule /angular_spa/input/ index.html [QSA]

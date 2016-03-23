@@ -13,11 +13,13 @@ app.controller('InputController',
     function($scope, $state, FormDataSharedService) {
 
     this.formData = FormDataSharedService.formData;
+    this.monthList = [1,2,3,4,5,6,7,8,9];
 
     $scope.next       = function(event, form) {
         event.preventDefault();
 
-        //this.formData = form.formData;
+        this.formData = form.formData;
+
 
         $state.go('confirm');
     };

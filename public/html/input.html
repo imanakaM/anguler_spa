@@ -2,11 +2,19 @@
     <p>input</p>
     <div>
         <form name="inputForm">
-            <input type="text" name="name" ng-model="input.formData.name">
+            <input type="text" name="name" ng-model="input.formData.name" ng-minlength="4" ng-maxlength="10" required><br>
+            <input type="password" name="pass" ng-model="input.formData.pass" required>
+            <br>
+            <input type="radio" ng-model="input.formData.sex" value="man" required>  man <br/>
+            <input type="radio" ng-model="input.formData.sex" value="woman" required>  woman <br/>
+            <br>
+            month:<select name="month" ng-model="input.formData.month" required>
+            <option ng-repeat="month in input.monthList" value="{{ month }}">{{ month }}</option>
+            </select>
         </form>
     </div>
     <div>
         <input type="button" value="前へ" ng-click="prev($event)">
-        <input type="button" value="次へ" ng-click="next($event, input)">
+        <input type="button" value="次へ" ng-click="next($event, input)" ng-disabled="inputForm.$invalid">
     </div>
 </div>
